@@ -5,15 +5,15 @@
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
         <ProjectGuid>{707CBC84-5DBA-4BD6-91EA-5003BF8D45CF}</ProjectGuid>
-        <OutputType>Exe</OutputType>
-        <RootNamespace>TheAirBlow.Skysmart.Windows</RootNamespace>
-        <AssemblyName>TheAirBlow.Skysmart.Windows</AssemblyName>
+        <OutputType>WinExe</OutputType>
+        <RootNamespace>TheAirBlow.Skills4u.Windows</RootNamespace>
+        <AssemblyName>TheAirBlow.Skills4u.Windows</AssemblyName>
         <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
         <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
         <Deterministic>true</Deterministic>
         <LangVersion>latest</LangVersion>
-        <ApplicationIcon>..\application.ico</ApplicationIcon>
+        <ApplicationIcon>..\Application.ico</ApplicationIcon>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
         <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,8 +35,38 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
+        <Reference Include="AngleSharp, Version=0.16.1.0, Culture=neutral, PublicKeyToken=e83494dcdc6d31ea">
+          <HintPath>..\packages\AngleSharp.0.16.1\lib\net461\AngleSharp.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="AngleSharp.Js, Version=0.15.0.0, Culture=neutral, PublicKeyToken=e83494dcdc6d31ea">
+          <HintPath>..\packages\AngleSharp.Js.0.15.0\lib\net461\AngleSharp.Js.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="jint, Version=2.10.4.0, Culture=neutral, PublicKeyToken=2e92ba9c8d81157f">
+          <HintPath>..\packages\jint.2.10.4\lib\net45\jint.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="mscorlib" />
+        <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
+          <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
         <Reference Include="System" />
+        <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
+          <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
         <Reference Include="System.Core" />
+        <Reference Include="System.Diagnostics.Contracts" />
+        <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+          <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="System.Text.Encoding.CodePages, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+          <HintPath>..\packages\System.Text.Encoding.CodePages.5.0.0\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
         <Reference Include="System.Xml.Linq" />
         <Reference Include="System.Data.DataSetExtensions" />
         <Reference Include="Microsoft.CSharp" />
@@ -48,12 +78,6 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Login.cs">
-            <SubType>Form</SubType>
-        </Compile>
-        <Compile Include="Login.Designer.cs">
-            <DependentUpon>Login.cs</DependentUpon>
-        </Compile>
         <Compile Include="Main.cs">
           <SubType>Form</SubType>
         </Compile>
@@ -62,9 +86,6 @@
         </Compile>
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
-        <EmbeddedResource Include="Login.resx">
-          <DependentUpon>Login.cs</DependentUpon>
-        </EmbeddedResource>
         <EmbeddedResource Include="Main.resx">
           <DependentUpon>Main.cs</DependentUpon>
         </EmbeddedResource>
@@ -77,9 +98,10 @@
             <AutoGen>True</AutoGen>
             <DependentUpon>Resources.resx</DependentUpon>
         </Compile>
-        <None Include="..\application.ico">
-          <Link>application.ico</Link>
+        <None Include="..\Application.ico">
+          <Link>Application.ico</Link>
         </None>
+        <None Include="packages.config" />
         <None Include="Properties\Settings.settings">
             <Generator>SettingsSingleFileGenerator</Generator>
             <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -94,9 +116,9 @@
         <None Include="App.config" />
     </ItemGroup>
     <ItemGroup>
-      <ProjectReference Include="..\TheAirBlow.Skysmart.Library\TheAirBlow.Skysmart.Library.csproj">
+      <ProjectReference Include="..\TheAirBlow.Resh.Library\TheAirBlow.Resh.Library.csproj">
         <Project>{a1dc1de2-7877-4626-95de-83b19e5b4639}</Project>
-        <Name>TheAirBlow.Skysmart.Library</Name>
+        <Name>TheAirBlow.Resh.Library</Name>
       </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TheAirBlow.Skysmart.Windows.Properties
+namespace TheAirBlow.Skills4u.Windows.Properties
 {
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
@@ -46,7 +46,7 @@ namespace TheAirBlow.Skysmart.Windows.Properties
                 {
                     global::System.Resources.ResourceManager temp =
                         new global::System.Resources.ResourceManager(
-                            "TheAirBlow.Skysmart.Windows.Properties.Resources", typeof(Resources).Assembly);
+                            "TheAirBlow.Skills4u.Windows.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
 
